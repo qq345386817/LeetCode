@@ -26,5 +26,7 @@ class Solution:
         :type num2: str
         :rtype: str
         """
+        result = 0
         for char1 in num1:
             
+        return result
