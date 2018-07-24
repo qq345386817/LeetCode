@@ -10,7 +10,10 @@ class ListNode:
         self.next = next
 
     def append(self, node):
-        self.next = node
+        finalNode = self
+        while finalNode.next != None:
+            finalNode = finalNode.next
+        finalNode.next = node
         return self
 
     def __repr__(self):
@@ -73,12 +76,12 @@ class Solution:
 
         return result
         
-node1 = ListNode(2).append(ListNode(4).append(ListNode(3)))
-node2 = ListNode(5).append(ListNode(6).append(ListNode(4)))
+node1 = ListNode(2).append(ListNode(4)).append(ListNode(3))
+node2 = ListNode(5).append(ListNode(6)).append(ListNode(4))
 
 print(node1)
 print(node2)
 so = Solution()
-# print(so.addTwoNumbers2(node1,node2))
+print(so.addTwoNumbers2(node1,node2))
 print(so.addTwoNumbers2(ListNode(1).append(ListNode(8)),ListNode(0)))
 print(so.addTwoNumbers2(ListNode(5),ListNode(5)))
